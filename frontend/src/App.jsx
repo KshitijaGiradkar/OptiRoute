@@ -26,6 +26,9 @@ import axios from "axios";
 import AddressForm from "./components/AddressForm";
 import RouteDisplay from "./components/RouteDisplay";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:8000";
+
 export default function App() {
   const [route, setRoute]     = useState(null);
   const [loading, setLoading] = useState(false);
@@ -53,7 +56,11 @@ export default function App() {
     setRoute(null);   // clear any previous result
 
     try {
-      const response = await axios.post("/api/optimize-route", formData);
+      // const response = await axios.post("/api/optimize-route", formData);
+      const response = await axios.post(
+        `${API_URL}/optimize-route`,
+        formData
+      );
       setRoute(response.data);
 
       // Scroll to the results section after a short frame delay so the
