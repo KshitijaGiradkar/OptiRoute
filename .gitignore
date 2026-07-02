@@ -1,0 +1,20 @@
+# Python virtual environments
+.venv/
+venv/
+.venu.venv/
+backend/.venv/
+backend/.venu.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# React
+node_modules/
+dist/
+
+# VS Code
+.vscode/
